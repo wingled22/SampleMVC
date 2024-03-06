@@ -1,0 +1,9 @@
+@model List<Animal>;
+
+<h1>list of Animals</h1>
+
+<ol>
+    @foreach( var animal in Model){
+        <li> Name : @animal.Name || Description : @animal.Description </li>
+    }
+</ol>

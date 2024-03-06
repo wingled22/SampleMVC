@@ -1,6 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using SampleMVC.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<ZooContext>(options =>
+    options.UseSqlServer("Server=localhost;Database=Zoo;User ID=SA;Password=VeryStr0ngP@ssw0rd;TrustServerCertificate=true;")
+);
+
+
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
